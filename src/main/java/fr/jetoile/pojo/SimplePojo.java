@@ -21,29 +21,21 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package fr.jetoile.service;
+package fr.jetoile.pojo;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
-import fr.jetoile.pojo.SimplePojo;
+@XmlRootElement
+public class SimplePojo {
 
-@Path( "/sample" )
-public class SampleService {
+	@XmlElement
+	private String msg;
 
-	@Path( "hello/1" )
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	public String sayHello() {
-		return "Hello";
+	public SimplePojo() {
 	}
 
-	@Path("hello/2")
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	public SimplePojo sayAdvancedHello() {
-		return new SimplePojo("bonjour");
+	public SimplePojo(String msg) {
+		this.msg = msg;
 	}
 }
