@@ -8,7 +8,7 @@
     <artifactId>promote-plugin-test-project</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-    <description>this is an another description</description>
+    <description>this is an another stupid description</description>
 
     <scm>
         <connection>scm:git:https://github.com/jetoile/promote-plugin-test-project.git</connection>
